@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "ko">
+    <head>
+        <meta charset = "UTF-8" />
+        <meta name = "viewport"  content="width=device-width, initial-scale=1.0" />
+        <title>파견기관자료</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+        
+    </head>
+
+    <body>
+        
+        <div class = "button-container">
+            <button class="continentButton" onclick="showContinent('North America', this)">North America</button>
+            <button class="continentButton" onclick="showContinent('Europe', this)">Europe</button>
+            <button class="continentButton" onclick="showContinent('Asia', this)">Asia</button>
+            <button class="continentButton" onclick="showContinent('Oceania', this)">Oceania</button>
+            <button class="continentButton" onclick="showContinent('Africa', this)">Africa</button>
+            <button class="continentButton" onclick="showContinent('South America', this)">South America</button>
+        </div>
+
+        <div class="output-container" id="output"></div>
+        <div id="map"></div> 
+
+        <script async defer 
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnkYQKL4eEcLAmFGFMMGqrjKHZf-2Clkg&libraries=places">
+        </script>
+    </body>
+</html>
