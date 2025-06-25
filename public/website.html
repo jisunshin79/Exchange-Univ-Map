@@ -1,30 +1,38 @@
 <!DOCTYPE html>
-<html lang = "ko">
-    <head>
-        <meta charset = "UTF-8" />
-        <meta name = "viewport"  content="width=device-width, initial-scale=1.0" />
-        <title>파견기관자료</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exchange Universities Map</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+    #filters {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="continentButtonArea" class="continentButtonArea">
+    <button onclick="showContinent('Asia', this)">Asia</button>
+    <button onclick="showContinent('North America', this)">North America</button>
+    <button onclick="showContinent('Europe', this)">Europe</button>
+    <button onclick="showContinent('Oceania', this)">Oceania</button>
+    <button onclick="showContinent('Latin America', this)">Latin America</button>
+  </div>
 
-        <link rel="stylesheet" href="public/style.css" />
-        
-    </head>
+  <div id="map"></div>
 
-    <body>
-        
-        <div class = "button-container">
-            <button class="continentButton" onclick="showContinent('North America', this)">North America</button>
-            <button class="continentButton" onclick="showContinent('Europe', this)">Europe</button>
-            <button class="continentButton" onclick="showContinent('Asia', this)">Asia</button>
-            <button class="continentButton" onclick="showContinent('Oceania', this)">Oceania</button>
-            <button class="continentButton" onclick="showContinent('Africa', this)">Africa</button>
-            <button class="continentButton" onclick="showContinent('South America', this)">South America</button>
-        </div>
+  <!-- main.js는 맨 아래에 -->
+  <script src="main.js"></script>
 
-        <div class="output-container" id="output"></div>
-        <div id="map"></div> 
-
-        <script async defer 
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnkYQKL4eEcLAmFGFMMGqrjKHZf-2Clkg&libraries=places">
-        </script>
-    </body>
+  <!-- Google Maps API 키 넣기 -->
+  <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnkYQKL4eEcLAmFGFMMGqrjKHZf-2Clkg&callback=initMap"
+    async defer>
+  </script>
+</body>
 </html>

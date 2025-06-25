@@ -1,43 +1,91 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-  }
-  
-  .map-container {
-    height: 100vh;
-    width: 100%;
-  }
-  
-  #map {
-    height: 100%;
-    width: 100%;
-  }
-  
-  .button-container {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    display: flex;
-    gap: 10px;
-  }
-  
-  .continentButton {
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .output-container {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+/* 버튼 영역 전체를 상단에 고정, 가운데 정렬 */
+.continentButtonArea {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 각 버튼 스타일 */
+.continentButtonArea button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 호버 시 */
+.continentButtonArea button:hover {
+  background-color: #d0ebff;
+}
+
+/* 클릭된 (선택된) 버튼 */
+.continentButtonArea button.selected {
+  background-color: #339af0;
+  color: white;
+  border-color: #339af0;
+  font-weight: bold;
+}
+
+
+.hoverWindow {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  max-width: 350px;
+}
+
+.hoverWindow .info-section {
+  margin-bottom: 12px;
+}
+
+.hoverWindow h3 {
+  text-align: center;
+  color: #555;
+}
+
+.hoverWindow h4.smallCity {
+  text-align: center;
+}
+
+.hoverWindow ul {
+  padding-left: 20px;
+  color: #555;
+  list-style-type: disc;
+}
+
+.hoverWindow .infoList {
+  padding-left: 16px;
+  list-style-type: disc;
+  font-size: 13px;
+}
