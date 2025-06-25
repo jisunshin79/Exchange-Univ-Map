@@ -4,6 +4,7 @@ let infoWindow;
 let dataList = [];
 
 const continentCenters = {
+  "All":{lat:0, lng:0},
   "North America": { lat: 37.0902, lng: -95.7129 },
   "Europe": { lat: 54.5260, lng: 15.2551 },
   "Asia": { lat: 24.0479, lng: 100.6197 },
@@ -13,7 +14,8 @@ const continentCenters = {
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    center: continentCenters["North America"],
+    center: continentCenters["All"],
+    zoom: 2,
   });
 
   fetch("data.json")
@@ -23,11 +25,28 @@ function initMap() {
     })
     .then(data => {
       dataList = data;
+      showAllMarkers();
       //console.log("✅ data 응답:", dataList);
-      showContinent("North America", this);
+      // showContinent("Asia", this);
     })
     .catch(error => console.error('JSON file load error', error));
 
+}
+
+function showAllMarkers() {
+  markers.forEach(marker => marker.setVisible(false)); // 기존 마커 숨기기
+
+  dataList.forEach(univ => {
+    createMarker(univ.lat, univ.lng, univ);
+  });
+
+  map.setCenter(continentCenters["All"]);
+  map.setZoom(2);
+
+  // 버튼 선택 해제
+  document.querySelectorAll(".continentButtonArea button").forEach(btn => {
+    btn.classList.remove("selected");
+  });
 }
 
 function createMarker(lat, lng, university) {
@@ -134,8 +153,10 @@ function showContinent(continent, clickedButton) {
     btn.classList.remove("selected");
   });
 
+  if (clickedButton) clickedButton.classList.add("selected");
+
   // 클릭된 버튼에 selected 클래스 추가
-  clickedButton.classList.add("selected");
+  // clickedButton.classList.add("selected");
 
   //Show the markers of selected continent
   dataList
