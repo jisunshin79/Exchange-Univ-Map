@@ -2,6 +2,13 @@
 
 An interactive map showing universities available for student exchange programs of Sogang University, built using Google Maps JavaScript API.
 
+## 📍 Website Screenshot
+
+![Screenshot](./data/F94F502E-B69F-4D5B-B303-71919DD251C4.jpeg)
+![Screenshot](./data/DD6B0DBA-FFDD-49EF-A049-337084921AE3.jpeg)
+![Screenshot](./data/0EB25F3C-3B50-4BA6-AD40-E344F41EC9A4.jpeg)
+![Screenshot](./data/6EC60BA5-276E-465B-AE5D-05BE298E6302.jpeg)
+
 ## 📌 Overview
 
 This project visualizes partner institutions across continents for study-abroad programs of Sogang University. It aims to help students:
